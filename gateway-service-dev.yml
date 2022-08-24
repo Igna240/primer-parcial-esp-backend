@@ -2,10 +2,6 @@ server:
   port: 8080
   
 spring:
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:8762/eureka
   cloud:
     gateway:
       routes:
@@ -17,3 +13,7 @@ spring:
           uri: http://localhost:8084/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/playlists/**
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8762/eureka
