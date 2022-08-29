@@ -5,14 +5,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: musicRoute #Identificando la ruta del service de producto
+        - id: movieRoute #Identificando la ruta del service de producto
           uri: http://localhost:8082/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
-            - Path=/musics/**
-        - id: playlistRoute #Identificando la ruta del service de producto
+            - Path=/movies/**
+        - id: catalogRoute #Identificando la ruta del service de producto
           uri: http://localhost:8084/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
-            - Path=/playlists/**
+            - Path=/catalogs/**
 eureka:
   client:
     service-url:
